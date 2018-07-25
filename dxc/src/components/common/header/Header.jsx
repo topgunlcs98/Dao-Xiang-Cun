@@ -10,10 +10,13 @@ export default class Header extends Component {
                     <Icon type="car" style={{ fontSize: 24, color: '#ffffff' }} />
                     <span className={styles.leftTitle}>稻香村</span>
                     <span className={styles.subTitle}>带你走出城市</span>
-                    <span className={styles.subTitle}><Icon type="pushpin-o" style={{ fontSize: 14, color: '#ffffff' }} />成都</span>
+                    <span className={styles.subTitle}><Icon type="pushpin-o" style={{ fontSize: 14, color: '#ffffff' }} />{ '成都' }</span>
                 </div>
-                {/* <div className={styles.midWrapper}></div>
-                <div className={styles.rightWrapper}></div> */}
+                {/* <div className={styles.midWrapper}></div>*/}
+                <div className={styles.rightWrapper}>
+                    <Icon type="user" style={{fontSize:24, color:'#000000'}} />
+                    <span className={styles.logIn}>登录</span>
+                </div> 
             </div>
         )
     }

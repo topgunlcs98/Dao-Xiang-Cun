@@ -1,0 +1,33 @@
+.wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 30px 50px;
+    width: 100%;
+    height: 100%;
+    background-color: #ff8d1a;
+    color: #ffffff
+}
+
+.leftWrapper {
+    display: flex;
+    justify-content: space-between;
+    height: 100px;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.rightWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.title {
+    font-size: 24px;
+}
+
+.subTitle{
+    font-size: 14
+}
