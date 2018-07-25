@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import {Home} from './views'
+import { Home, Recommand, My, ShoppingCart } from './views'
+import { BrowserRouter, Route, Switch } from 'react-router-dom'
 class App extends Component {
   render() {
     return (
@@ -8,9 +9,17 @@ class App extends Component {
       //   稻香村-front_end
       //   <Icon type="github"style={{ fontSize: 32, color: 'black' }}  />
       // </div>
-      <div>
-        <Home />
-      </div>
+      // <div>
+      //   <Home />
+      // </div>
+      <BrowserRouter>
+        <Switch>
+          <Route path='/' component={Home} exact />
+          <Route path='/recommand' component={Recommand} />
+          <Route path='/my' component={My} />
+          <Route path='/shoppingCart' component={ShoppingCart} />
+        </Switch>
+      </BrowserRouter>
     );
   }
 }
