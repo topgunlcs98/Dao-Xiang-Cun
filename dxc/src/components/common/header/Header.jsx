@@ -16,6 +16,7 @@ export default class Header extends Component {
                 <div className={styles.midWrapper}>
                     <NavLink to="/" className={styles.navLink}><span className={styles.linkItem}>首页</span></NavLink>|
                     <NavLink to='/recommand' className={styles.navLink}><span className={styles.linkItem}>分类推荐</span></NavLink>|
+                    <NavLink to='/diary' className={styles.navLink}><span className={styles.linkItem}>达人游记</span></NavLink>|
                     <NavLink to='/shoppingCart' className={styles.navLink}><span className={styles.linkItem}>购物车</span></NavLink>|
                     <NavLink to='/my' className={styles.navLink}><span className={styles.linkItem}>个人中心</span></NavLink>
                 </div>
