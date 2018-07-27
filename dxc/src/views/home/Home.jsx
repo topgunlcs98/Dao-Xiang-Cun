@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import styles from './home.css'
 import {Header,Footer}  from 'components/common'
+import TravelDiary from './diary/TravelDiary';
 
 export default class Home extends Component {
     render() {
@@ -13,7 +14,7 @@ export default class Home extends Component {
                     轮播图
                 </div>
                 <div className={styles.containtWrapper}>
-                      内容
+                    <TravelDiary />
                 </div>
                 <div className={styles.footerWrapper}>
                     <Footer />
