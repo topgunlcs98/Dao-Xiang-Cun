@@ -1,0 +1,47 @@
+.wrapper {
+    display: flex;
+    flex-direction: row;
+    padding: 0px 10px 50px 10px;
+}
+
+.leftWrapper {
+   float: left;
+}
+
+.pic {
+    width: 190px;
+    height: 140px;
+}
+
+.rightWrapper {
+    display:flex;
+    flex-direction: column;
+    width: 280px;
+    height: 100%;
+    justify-content: space-between;
+    color: #000000;
+    margin: 0 10px;
+}
+
+.title {
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 18px; 
+    text-decoration: underline;
+}
+
+.abstract {
+   width:100%;
+   font-size: 14;
+   line-height: 1.4em;
+   height: 4.2em;
+   overflow: hidden;
+   text-overflow: ellipsis;
+}
+
+.more {
+    font-size: 14px;
+    color:#d43043;
+}
