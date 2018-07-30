@@ -11,6 +11,7 @@ export default class Home extends Component {
                 </div>
                 <div className={styles.picBoard}>
                     轮播图
+                    woshiyigexxx
                 </div>
                 <div className={styles.containtWrapper}>
                       内容
