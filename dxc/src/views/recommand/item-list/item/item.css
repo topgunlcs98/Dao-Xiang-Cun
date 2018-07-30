@@ -1,0 +1,71 @@
+.wrapper {
+    margin-top: 10px;
+    height: 200px;
+}
+
+.photo {
+    float: left;
+    width: 200px; 
+    height: 190px;
+    overflow: hidden;
+}
+
+.info {
+    float: left;
+    width: 400px;
+    padding-left: 40px;
+}
+
+.title {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.otherInfo {
+    color: gray;
+    line-height: 40px;
+}
+
+.activ {
+    margin-top: 7px;
+    font-size: 15px;
+}
+
+.activWord {
+    float: left;
+    width: 50px;
+    text-align: center;
+    background-color: #ff5733;
+}
+
+.activInfo {
+    float: left;
+    width: 250px;
+    text-align:center;
+    background-color: #e5e5e5;
+}
+
+.priceInfo {
+    float: left;
+    width: 200px;
+    margin-top: 10px;
+}
+
+.price {
+    width: 110px;
+    text-align: center;
+    font-size: 20px;
+    color: rgb(250, 28, 28);
+    font-weight: bold;
+}
+
+.starTotal {
+    margin-top: 12px;
+}
+
+.star {
+    float: left;
+    height: 20px;
+    width: 20px;
+    margin: 0 1px;
+}
