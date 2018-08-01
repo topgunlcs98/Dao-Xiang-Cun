@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import styles from './productrecommand.css'
+import { NavLink } from 'react-router-dom'
 import ProductItem from './product-item/ProductItem'
 
 export default class ProductRecommand extends Component {
@@ -18,6 +19,7 @@ export default class ProductRecommand extends Component {
             <div className={styles.wrapper}>
                 <div className={styles.titleBar}>
                     <span className={styles.title}>产品推荐</span>
+                    <span className={styles.more}><NavLink to='/recommand'><span style={{color: '#000000'}}>更多</span></NavLink></span>
                 </div>
                 <div className={styles.contentWrapper}>
                     <div className={styles.contentContainer}>
