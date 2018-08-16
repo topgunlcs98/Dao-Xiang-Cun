@@ -33,7 +33,8 @@
 }
 
 .centerWrapper {
-    display: inline-block;
+    display: flex;
+    flex-direction: row;
     justify-content: space-between;
     font-size: 18px;
 }
@@ -48,7 +49,7 @@
 
 .tag{
     width: 65%;
-    display: wrap;
+    display: flex;
     font-size: 14px;
     float: right;
     vertical-align: top;
