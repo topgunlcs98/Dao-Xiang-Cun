@@ -10,8 +10,9 @@ export default class ProductItem extends Component {
                 </div>
                 <div className={styles.rightWrapper}>
                     <div className={styles.placeName}>史莱伯花园</div>
-                    <div className={styles.address}>三圣乡</div>
-                    <div className={styles.centerWrapper}>
+                   
+                    <div className={styles.centerWrapper}> 
+                        <div className={styles.address}>三圣乡</div>
                         <div className={styles.tag}>童话 亲子 野炊 </div>
                     </div>
                     <div className={styles.price}>143/人</div>
