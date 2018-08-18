@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import styles from './ProjectDetail.css'
-import {Header,Footer}  from 'components/common'
+import {Header, Footer, Info}  from 'components/common'
 
 export default class ProjectDetail extends Component {
     render() {
@@ -13,7 +13,9 @@ export default class ProjectDetail extends Component {
                     项目详情
                     <div>简介</div>
                     <div>轮播图</div>
-                    <div>信息</div>
+                    <Info type={'商家信息'} />
+                    <Info type={'简介'} />
+                    <Info type={'商家服务'} />
                     <div>用户点评</div>
                 </div>
                 <div className={styles.footerWrapper}>
