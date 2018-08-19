@@ -2,7 +2,7 @@
     margin: 1%;
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: 98%;
 }
 
 .titleBar {
@@ -31,7 +31,7 @@
 .contentContainer {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-evenly;
     flex-wrap: wrap;
     width:100%;
     height:350px;
