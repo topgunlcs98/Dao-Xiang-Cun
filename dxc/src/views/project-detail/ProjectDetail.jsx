@@ -1,7 +1,6 @@
 import React, {Component} from 'react'
 import styles from './ProjectDetail.css'
 import {Header, Footer, Info}  from 'components/common'
-import BriefIntro from './components/brief-intro/BriefIntro';
 
 export default class ProjectDetail extends Component {
     render() {
