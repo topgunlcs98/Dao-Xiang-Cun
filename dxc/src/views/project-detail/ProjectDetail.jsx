@@ -10,8 +10,7 @@ export default class ProjectDetail extends Component {
                     <Header />
                 </div>
                 <div className={styles.containtWrapper}>
-                    项目详情
-                    <div>简介</div>
+                    <BriefIntro />
                     <div>轮播图</div>
                     <Info type={'商家信息'} />
                     <Info type={'简介'} />
