@@ -2,6 +2,7 @@ import React,{Component} from 'react'
 import styles from './briefIntro.css'
 import { NavLink } from 'react-router-dom'
 import Image_5 from '../../../../assets/pic5.jpeg'
+import Image_addrLogo from './logo/addrLogo.png'
 import starOff from '../../../recommand/item-list/item/star/1.png'
 import starOn from '../../../recommand/item-list/item/star/2.png'
 
@@ -50,7 +51,7 @@ export default class BriefIntro extends Component{
                     </div>
                     <div className={styles.thirdWrapper}>
                         <div className={styles.address}>{this.state.address}</div>
-                        <img src={starOn} alt="pic" className={styles.logo} />
+                        <img src={Image_addrLogo} alt="pic" className={styles.logo} />
                          
                     </div>
                     <div className={styles.reserveButton}>
