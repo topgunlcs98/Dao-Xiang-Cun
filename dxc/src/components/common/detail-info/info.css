@@ -19,6 +19,7 @@
     width: 60%;
     font-size: 18px;
     color:#505050;
+    overflow: hidden
 }
 
 .more{
