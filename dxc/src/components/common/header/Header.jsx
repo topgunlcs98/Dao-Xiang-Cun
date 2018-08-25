@@ -22,7 +22,7 @@ export default class Header extends Component {
                 </div>
                 <div className={styles.rightWrapper}>
                     <Icon type="user" style={{fontSize:24, color:'#000000'}} />
-                    <span className={styles.logIn}>登录</span>
+                    <span className={styles.logIn}><NavLink to='/logIn'>登录</NavLink></span>
                 </div> 
             </div>
         )

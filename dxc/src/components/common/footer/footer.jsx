@@ -18,7 +18,7 @@ export default class Footer extends Component {
                     移动智能工作室 ©2018 稻香村. All right reserved. 川ICP备1234567890号-3川公网安备 1234567890号
                     </span>
                 </div>
-                <div classNmae={styles.rightWrapper}>
+                <div className={styles.rightWrapper}>
                     <span className={styles.subTitle}>
                     服务热线：028-6666666
                     </span>
