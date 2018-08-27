@@ -3,7 +3,7 @@
     margin-top: 50px;
     display: flex;
     flex-direction: column;
-    width: 1700px;
+    width: 1500px;
 }
 
 .titleBar {
@@ -47,7 +47,7 @@
     flex-direction: column;
     float: right;
     padding: 10px 40px;
-    width: 400px;
+    width: 25%;
 }
 
 .talentTitle {
