@@ -1,8 +1,8 @@
 .wrapper {
-    margin: 1%;
+    /* margin: 1%; */
     display: flex;
     flex-direction: column;
-    width: 98%;
+    width: 1700px;
 }
 
 .titleBar {
@@ -13,13 +13,13 @@
 
 .title {
     float: left;
-    font-size: 24px;
+    font-size: 30px;
     font-weight: bold;
 }
 
 .more {
     float: right;
-    font-size: 20px;
+    font-size: 25px;
 }
 
 .contentWrapper {

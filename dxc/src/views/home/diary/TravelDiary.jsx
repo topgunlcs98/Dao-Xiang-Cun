@@ -9,7 +9,7 @@ export default class TravelDiary extends Component {
         super(props)
         this.state={
             content: [{id:0}, {id:1}, {id:2}, {id:3}, {id:4}, {id:5}],
-            talent: [{id:0}, {id:1}, {id:2}, {id:3}, {id:4}, {id:5}, {id:6}, {id:7}]
+            talent: [{id:0}, {id:1}, {id:2}, {id:3}]
         }
     }
     render () {
