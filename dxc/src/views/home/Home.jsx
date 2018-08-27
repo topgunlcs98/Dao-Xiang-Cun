@@ -3,6 +3,7 @@ import styles from './home.css';
 import {Header,Footer}  from 'components/common';
 import TravelDiary from './diary/TravelDiary';
 import ProductRecommand from './components/product-recommand/ProductRecommand';
+import HomeCarousel from './components/home-carousel/HomeCarousel';
 
 export default class Home extends Component {
     render() {
@@ -12,7 +13,7 @@ export default class Home extends Component {
                     <Header />
                 </div>
                 <div className={styles.picBoard}>
-                    轮播图
+                    <HomeCarousel />
                 </div>
                 <div className={styles.containtWrapper}>
                     <ProductRecommand />
