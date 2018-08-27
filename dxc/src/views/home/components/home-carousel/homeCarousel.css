@@ -1,11 +1,41 @@
 .wrapper{
     text-align: center;
+    padding: 0 5%;
     height: 400px;
-    line-height: 160px;
-    background: #364d79;
-    overflow: hidden;
+    /* overflow: visible; */
+    /* background-color: bisque; */
+    /* background-image:url(assets/pic5.jpeg);
+    background-size: 100% 100%; */
 }
 
-.wrapper h3{
-    color: #fff;
+.image{
+    display: inline-block
+}
+
+.pic1{
+    width:100%;
+    height: 100%;
+    background-image:url(assets/pic5.jpeg);
+    background-size: 100% 100%;
+}
+
+.pic2{
+    width: 100%;
+    height: 100%;
+    background-image:url(assets/pic3.jpeg);
+    background-size: 100% 100%;
+}
+
+.pic3{
+    width: 100%;
+    height: 100%;
+    background-image:url(assets/pic9.jpeg);
+    background-size: 100% 100%;
+}
+
+.pic4{
+    width: 100%;
+    height: 100%;
+    background-image:url(assets/pic11.jpg);
+    background-size: 100% 100%;
 }

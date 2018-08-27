@@ -5,11 +5,11 @@ import styles from './homeCarousel.css'
 export default class HomeCarousel extends Component {
     render () {
         return(
-            <Carousel autoplay>
-    <div className={styles.wrapper}><h3>1</h3></div>
-    <div className={styles.wrapper}><h3>2</h3></div>
-    <div className={styles.wrapper}><h3>3</h3></div>
-    <div className={styles.wrapper}><h3>4</h3></div>
+  <Carousel autoplay>
+    <div className={styles.wrapper}><div className={styles.pic1}></div></div>
+    <div className={styles.wrapper}><div className={styles.pic2}></div></div>
+    <div className={styles.wrapper}><div className={styles.pic3}></div></div>
+    <div className={styles.wrapper}><div className={styles.pic4}></div></div>
   </Carousel>
         )
     }
