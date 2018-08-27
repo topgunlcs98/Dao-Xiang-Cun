@@ -20,8 +20,6 @@ export default class Register extends Component{
                         <input className={styles.text} type="text" placeholder="输入账号" size="46" style={{height: 60}}/>
                         <input className={styles.text} type="text" placeholder="输入密码" size="46" style={{height: 60}}/>
                         
-                        <div className={styles.forget}>忘记密码？</div>
-                        
                         <div className={styles.buttonWrapper}>
                             <div className={styles.button}>
                                 <div className={styles.buttonName}>登录</div>
