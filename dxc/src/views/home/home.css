@@ -18,7 +18,7 @@
 .picBoard{
     margin-top: 70px;
     width: 100%;
-    height: 339px;
+    height: auto;
 }
 
 .containtWrapper {

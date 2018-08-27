@@ -2,7 +2,7 @@
     /* margin: 1%; */
     display: flex;
     flex-direction: column;
-    width: 1500px;
+    width: 1200px;
 }
 
 .titleBar {
@@ -13,13 +13,13 @@
 
 .title {
     float: left;
-    font-size: 30px;
+    font-size: 20px;
     font-weight: bold;
 }
 
 .more {
     float: right;
-    font-size: 25px;
+    font-size: 20px;
 }
 
 .contentWrapper {
