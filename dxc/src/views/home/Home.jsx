@@ -4,6 +4,7 @@ import {Header,Footer}  from 'components/common';
 import TravelDiary from './diary/TravelDiary';
 import ProductRecommand from './components/product-recommand/ProductRecommand';
 import HomeCarousel from './components/home-carousel/HomeCarousel';
+import SearchBar from './components/SearchBar/SearchBar'
 
 
 export default class Home extends Component {
@@ -17,9 +18,7 @@ export default class Home extends Component {
                     <HomeCarousel />
                 </div>
                 <div className={styles.containtWrapper}>
-                <div style={{width:'1200px'}}>
-                   
-                </div>
+                    <SearchBar />
                     <ProductRecommand />
                     <TravelDiary />
                 </div>
