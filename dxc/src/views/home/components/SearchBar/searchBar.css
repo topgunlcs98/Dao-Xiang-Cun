@@ -1,0 +1,33 @@
+.wrapper {
+    width:1200px;
+    height:auto;
+    margin-bottom: 50px;
+    border:2.5px solid #ff8d1a;
+    border-radius: 14px;
+    background-color: #e5e5e5;
+}
+
+.search{
+    width:1090px;
+    height:60px;
+    float:left;
+    margin-left: 10px;
+    border: 0px;
+    outline: none;
+    padding: 20px 20px 20px 10px;
+    font-size: 25px;
+    background-color: #e5e5e5;
+}
+
+.button{
+    position: absolute;
+    width:100px;
+    height:61px;
+    /* float:right; */
+    border: 0px;
+    outline: none; 
+    background-color: #ff8d1a;
+    border-radius: 14px;
+    color:#ffffff;
+    font-size: 20px;
+}
