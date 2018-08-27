@@ -1,10 +1,10 @@
 import React,{Component} from 'react'
-import styles from './logIn.css'
-import {NavLink} from 'react-router-dom'
+import styles from './register.css'
+import { NavLink } from 'react-router-dom'
 import {Header, Footer} from 'components/common'
 
 
-export default class LogIn extends Component{
+export default class Register extends Component{
     render(){
         return(
             <div className={styles.wrapper}>
@@ -15,7 +15,7 @@ export default class LogIn extends Component{
                 <div className={styles.contentWrapper}>
                     <div className={styles.leftWrapper}>带你走出城市</div>
                     <div className={styles.rightWrapper}>
-                        <div className={styles.title}>登录</div>
+                        <div className={styles.title}>注册</div>
                         
                         <input className={styles.text} type="text" placeholder="输入账号" size="46" style={{height: 60}}/>
                         <input className={styles.text} type="text" placeholder="输入密码" size="46" style={{height: 60}}/>

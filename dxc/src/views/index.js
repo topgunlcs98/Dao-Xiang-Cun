@@ -5,6 +5,7 @@ import ShoppingCart from './shopping-cart/ShoppingCart'
 import Diary from './diary/Diary'
 import ProjectDetail from './project-detail/ProjectDetail'
 import LogIn from './log-in/LogIn'
+import Register from './register/Register'
 
 export {
     Home,
@@ -13,5 +14,6 @@ export {
     ShoppingCart,
     Diary,
     ProjectDetail,
-    LogIn
+    LogIn,
+    Register
 }
