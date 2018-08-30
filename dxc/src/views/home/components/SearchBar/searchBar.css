@@ -1,16 +1,18 @@
 .wrapper {
+    position: relative;
     width:1200px;
     height:auto;
     margin-bottom: 50px;
     border:2.5px solid #ff8d1a;
     border-radius: 14px;
     background-color: #e5e5e5;
+    /* overflow: hidden; */
 }
 
 .search{
-    width:1090px;
+    width:970px;
     height:60px;
-    float:left;
+    /* float:left; */
     margin-left: 10px;
     border: 0px;
     outline: none;
@@ -23,11 +25,75 @@
     position: absolute;
     width:100px;
     height:61px;
-    /* float:right; */
+    float:right;
     border: 0px;
     outline: none; 
     background-color: #ff8d1a;
     border-radius: 14px;
     color:#ffffff;
     font-size: 20px;
+}
+
+.selectWrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width:120px;
+    height:60px;
+    float:left;
+    
+}
+
+.dropdn{
+    position: absolute;
+    top:62px;
+    left:7px;
+    display: none;
+}
+
+.btn{
+    display: flex;
+    justify-content: center;
+    line-height: 20px;
+    padding:21px 5px 21px 30px;
+    border-radius: 11px;
+    font-size: 20px;
+    text-align: center;
+    /* font-weight: bold; */
+    color:#000000;
+    /* background-color: #ff8d1a; */
+}
+.selectWrapper:hover .dropdn{
+    display: block;  
+    background-color: #ffffff; 
+    width:120px;
+}
+
+.dropdn:hover {
+    display: block;
+}
+
+ul{
+    display: flex;
+    flex-direction: column;
+    /* border: 1px solid #999999 */
+}
+
+li {
+    width:120px;
+    margin-left: -40px;
+    font-size: 25px;
+    list-style: none;
+    text-align: center;
+    border-left: 2px solid #999999;
+    border-right: 2px solid #999999;
+    /* border-bottom: 1px solid #999999; */
+}
+
+li:last-child{
+    border-bottom: 2px solid #999999;
+}
+
+li:hover{
+    color:#ff8d1a;
 }
