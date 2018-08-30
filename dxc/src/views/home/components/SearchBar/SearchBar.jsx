@@ -35,7 +35,7 @@ export default class SearchBar extends Component {
     }
 
     handleClick = () => {
-        alert(this.state.value)
+        alert(this.state.value+this.state.type.type)
     }
 
     handleTypeChange = (type,text) =>{
@@ -47,15 +47,12 @@ export default class SearchBar extends Component {
         return(
             <div className={styles.wrapper}>
                 <div className={styles.selectWrapper}>
-                    <div className={styles.btn}>{this.state.type.text}<Icon type="caret-down" style={{fontSize:20}}/></div>
+                    <div className={styles.btn}>{this.state.type.text}<Icon type="caret-down" style={{fontSize:15}}/></div>
                     <div className={styles.dropdn}>
-                       <ul>
-                           {/* <li>aaaa</li>
-                           <li>b</li>
-                           <li>c</li> */}
+                       <ul className={styles.dropdnWrapper}>
                             {
                                types.filter(item=> item.type!==this.state.type.type).map(({type, text})=>{
-                                    return <li key={type} word={text} onClick={this.handleTypeChange.bind(this,type,text)}>{text}</li>
+                                    return <li className={styles.dropdnItem} key={type} word={text} onClick={this.handleTypeChange.bind(this,type,text)}>{text}</li>
                                })
                             }
                        </ul>
