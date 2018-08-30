@@ -8,7 +8,7 @@ export default class Item extends Component {
     constructor(props) {
         super(props)
         if (!isEmptyObject(props)) {
-            // 设置信息
+            this.state = props.item
         } else {
             this.state={
                 photo : defaultImage,
@@ -21,7 +21,12 @@ export default class Item extends Component {
                 star : 4
             }
         }
-        
+    }
+
+    componentWillReceiveProps(nextProps) {
+        this.setState({
+            item: nextProps.item
+        })
     }
 
     star() {
@@ -37,11 +42,18 @@ export default class Item extends Component {
         return str
     }
 
+    photoUrl() {
+        var str = []
+        var path = this.state.photo
+        str.push(<img src={require('../../../../'+path)}  alt="itemPhoto" class={styles.photo}/>)
+        return str
+    }
+
     render() {
         return(
             <div class={styles.wrapper}>
                 <div>
-                    <img src={this.state.photo} alt="itemPhoto" class={styles.photo}/>
+                    <div>{this.photoUrl()}</div>
                     <div class={styles.info}>
                         <div class={styles.title}>{this.state.title}</div>
                         <div class={styles.otherInfo}>

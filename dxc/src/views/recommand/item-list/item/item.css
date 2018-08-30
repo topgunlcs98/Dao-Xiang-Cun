@@ -1,6 +1,6 @@
 .wrapper {
     margin-top: 10px;
-    height: 200px;
+    height: 220px;
 }
 
 .photo {
@@ -14,6 +14,7 @@
     float: left;
     width: 400px;
     padding-left: 40px;
+    margin-top: -7px;
 }
 
 .title {
@@ -24,12 +25,12 @@
 .otherInfo {
     color: gray;
     line-height: 40px;
-    font-size: 20px;
+    font-size: 17px;
 }
 
 .activ {
     margin-top: 7px;
-    font-size: 18px;
+    font-size: 17px;
 }
 
 .activWord {

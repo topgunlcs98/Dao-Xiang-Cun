@@ -1,0 +1,22 @@
+.wrapper {
+    line-height: 40px;
+    margin-top: -40px;
+    font-size: 15px;
+}
+
+.title {
+    width: 60px;
+    text-align: center;
+    color: gray;
+    font-weight: bold;
+    display:inline-block;
+}
+
+.tag {
+    display:inline-block;
+    margin-left: 20px;
+}
+
+.clear {
+    clear: both;
+}
