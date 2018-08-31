@@ -2,12 +2,15 @@ import React, { Component } from 'react'
 import styles from './info.css'
 import { Button } from 'antd'
 
-export default class Info extends Component {
+export default (WrappedComponent, title='默认标题', height)=> {
+    class Info extends Component{
     constructor(props) {
         super(props)
         this.state = {
-            title: props.type,
-            isFold: true
+            // title: props.type,
+            isFold: true,
+            // height:props.height,
+            // component: props.component
         }
         this.handleClick = this.handleClick.bind(this)
     }
@@ -18,17 +21,16 @@ export default class Info extends Component {
     render() {
         return(
             <div className={styles.wrapper}>
-                <div className={styles.title}>{this.state.title}</div>
+                <div className={styles.title}>{title}</div>
                 <div className={styles.content}
-                    style={{height: this.state.isFold?80: 'auto'}}>
-                    lalaallalala<br/>
-                    hahaha<br/>
-                    llll<br/>
-                    kkk<br/>
+                    style={{height: this.state.isFold?height: 'auto'}}>
+                    <WrappedComponent />
                 </div>
                 <div className={styles.more}> <Button onClick={this.handleClick}>{this.state.isFold?'更多': '收起'}</Button></div>
             </div>
         )
     }
+}
+    return Info
 
 }

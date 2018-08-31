@@ -18,12 +18,18 @@
 .content{
     width: 60%;
     font-size: 18px;
+    padding: 10px;
+    line-height: 24px;
     color:#505050;
-    overflow: hidden
+    overflow: hidden;
+    /* display:flex;
+    flex-direction: row;
+    align-items: center; */
 }
 
 .more{
     width: 20%;
+    padding-left: 20px;
     font-size: 18px;
     color: #000000;
     font-weight: bold;
