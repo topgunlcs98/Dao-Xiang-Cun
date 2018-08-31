@@ -12,8 +12,8 @@ export default class Recommand extends Component {
                 {
                     photo : 'assets/pic5.jpeg',
                     title : 'test',
-                    address : 'test',
-                    gayTravel : 'test',
+                    address : '都江堰',
+                    class : '亲子游',
                     comment : 'test',
                     activity : 'test',
                     price : '197',
@@ -23,8 +23,8 @@ export default class Recommand extends Component {
                 {
                     photo : 'assets/pic4.jpeg',
                     title : 'test2',
-                    address : 'test2',
-                    gayTravel : 'test2',
+                    address : '成都',
+                    class : '亲子游',
                     comment : 'test2',
                     activity : 'test2',
                     price : '177',
@@ -34,16 +34,37 @@ export default class Recommand extends Component {
                 {
                     photo : 'assets/pic3.jpeg',
                     title : 'test3',
-                    address : 'test3',
-                    gayTravel : 'test3',
+                    address : '绵阳',
+                    class : '周末出行',
                     comment : 'test3',
                     activity : 'test3',
                     price : '150',
                     star : 5,
                     key : 2,
                 },
-            ]
+            ],
+            oldNum : 3,
+            change : false,
         }
+    }
+
+    componentWillMount(){
+        var addressList = []
+        var classList = []
+        for (var n=0; n<this.state.item.length; n++) {
+            var item = this.state.item[n]
+            if (addressList.indexOf(item["address"])===-1){
+                addressList.push(item["address"])
+            }
+            if (classList.indexOf(item["class"])===-1){
+                classList.push(item["class"])
+            }
+        }
+        this.setState ({
+            addressList : addressList,
+            classList : classList,
+            itemBack : this.state.item,
+        })
     }
 
     sortByStar() {
@@ -51,8 +72,8 @@ export default class Recommand extends Component {
         list = list.sort(compare("star")).reverse()
         this.setState({
             item : list,
+            change : true,
         })
-        
     }
 
     sortByPrice() {
@@ -60,7 +81,37 @@ export default class Recommand extends Component {
         list = list.sort(compare("price"))
         this.setState({
             item : list,
+            change : true,
         })
+    }
+
+    selectionFunc(kind, tagList) {
+        if (kind==="address") {
+            this.setState({
+                addressList : tagList
+            })
+        }
+    }
+
+    componentWillUpdate(nextProps, nextState) {
+        var newAddressList = nextState.addressList
+        var newNum = newAddressList.length
+        var change = nextState.change
+        var newItem = []
+        if (newNum===this.state.oldNum && !change){
+            return 0
+        }else if (newNum!==this.state.oldNum){
+            for (var n=0; n<this.state.itemBack.length; n++) {
+                var item = this.state.itemBack[n]
+                if (newAddressList.indexOf(item["address"])!==-1) {
+                    newItem.push(item)
+                }
+            }
+            nextState.item = newItem
+            nextState.oldNum = newNum
+        }else{
+            return 0
+        }        
     }
 
     render() {
@@ -70,10 +121,19 @@ export default class Recommand extends Component {
                     <Header />
                 </div>
                 <div className={styles.selectionWrapper}>
-                    <Selection  item={this.state.item}/>
+                    <Selection  
+                    item={this.state.item} 
+                    addressList={this.state.addressList}
+                    classList={this.state.classList}
+                    selectionFunc={(kind, tagList)=>{this.selectionFunc(kind, tagList)}}
+                    />
                 </div>
                 <div className={styles.itemListWrapper}>
-                    <ItemList item={this.state.item} sortByStar={()=>{this.sortByStar()}} sortByPrice={()=>{this.sortByPrice()}}/>
+                    <ItemList 
+                    item={this.state.item} 
+                    sortByStar={()=>{this.sortByStar()}} 
+                    sortByPrice={()=>{this.sortByPrice()}}
+                    />
                 </div>
                 <div className={styles.footerWrapper}>
                     <Footer />

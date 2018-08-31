@@ -14,7 +14,7 @@ export default class Item extends Component {
                 photo : defaultImage,
                 title : 'test',
                 address : 'test',
-                gayTravel : 'test',
+                class : 'test',
                 comment : 'test',
                 activity : 'test',
                 price : '197',
@@ -27,6 +27,7 @@ export default class Item extends Component {
         this.setState({
             item: nextProps.item
         })
+
     }
 
     star() {
@@ -58,7 +59,7 @@ export default class Item extends Component {
                         <div class={styles.title}>{this.state.title}</div>
                         <div class={styles.otherInfo}>
                             地址：{this.state.address}<br/>
-                            闺蜜游：{this.state.gayTravel}<br/>
+                            分类：{this.state.class}<br/>
                             点评：{this.state.comment}<br/>
                         </div>
                         <div class={styles.activ}>
