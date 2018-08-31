@@ -42,7 +42,9 @@ export default class Recommand extends Component {
                     star : 5,
                     key : 2,
                 },
-            ]
+            ],
+            oldNum : 3,
+            change : false,
         }
     }
 
@@ -70,6 +72,7 @@ export default class Recommand extends Component {
         list = list.sort(compare("star")).reverse()
         this.setState({
             item : list,
+            change : true,
         })
     }
 
@@ -78,6 +81,7 @@ export default class Recommand extends Component {
         list = list.sort(compare("price"))
         this.setState({
             item : list,
+            change : true,
         })
     }
 
@@ -90,12 +94,13 @@ export default class Recommand extends Component {
     }
 
     componentWillUpdate(nextProps, nextState) {
-        var newItem = []
         var newAddressList = nextState.addressList
-        if (newAddressList.length===this.state.addressList.length){
-            console.log(this.state.addressList.length)
+        var newNum = newAddressList.length
+        var change = nextState.change
+        var newItem = []
+        if (newNum===this.state.oldNum && !change){
             return 0
-        }else{
+        }else if (newNum!==this.state.oldNum){
             for (var n=0; n<this.state.itemBack.length; n++) {
                 var item = this.state.itemBack[n]
                 if (newAddressList.indexOf(item["address"])!==-1) {
@@ -103,8 +108,10 @@ export default class Recommand extends Component {
                 }
             }
             nextState.item = newItem
-            console.log(this.state.addressList.length)
-        }
+            nextState.oldNum = newNum
+        }else{
+            return 0
+        }        
     }
 
     render() {
