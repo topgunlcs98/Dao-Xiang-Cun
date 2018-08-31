@@ -21,7 +21,7 @@ export default class Recommand extends Component {
                     key : 0,
                 },
                 {
-                    photo : 'assets/pic4.JPEG',
+                    photo : 'assets/pic4.jpeg',
                     title : 'test2',
                     address : '成都',
                     class : '亲子游',
