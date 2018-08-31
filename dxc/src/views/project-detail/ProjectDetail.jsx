@@ -1,7 +1,12 @@
 import React, {Component} from 'react'
 import styles from './ProjectDetail.css'
-import {Header, Footer, Info}  from 'components/common'
+import {Header, Footer}  from 'components/common'
 import BriefIntro from './components/brief-intro/BriefIntro';
+// import Comment from './components/comment/Comment'
+import Seller from './components/information/Seller'
+import Intro from './components/information/Intro'
+import Service from './components/information/Service'
+import Comment from './components/information/Comment'
 
 export default class ProjectDetail extends Component {
     render() {
@@ -13,10 +18,10 @@ export default class ProjectDetail extends Component {
                 <div className={styles.containtWrapper}>
                     <BriefIntro />
                     <div>轮播图</div>
-                    <Info type={'商家信息'} />
-                    <Info type={'简介'} />
-                    <Info type={'商家服务'} />
-                    <div>用户点评</div>
+                    <Seller />
+                    <Intro />
+                    <Service />
+                    <Comment />
                 </div>
                 <div className={styles.footerWrapper}>
                     <Footer />

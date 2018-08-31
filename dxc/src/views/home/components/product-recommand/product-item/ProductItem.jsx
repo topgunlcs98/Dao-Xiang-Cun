@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { NavLink } from 'react-router-dom'
 import styles from './productitem.css'
-import Image_1 from '../../../../../assets/pic4.JPEG'
+import Image_1 from '../../../../../assets/pic4.jpeg'
 export default class ProductItem extends Component {
     render() {
         return(
