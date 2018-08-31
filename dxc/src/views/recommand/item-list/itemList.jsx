@@ -17,17 +17,16 @@ export default class ItemList extends Component {
         this.setState({
             item: nextProps.item
         })
-        
     }
 
     itemCons(){
-        let len = this.state.item.length
+        var item = this.state.item
+        var len = item.length
         var str = []
         for(let n=0; n<len; n++){
-            str.push(<Item item={this.state.item[n]} key={this.state.item[n].key}/>)
+            str.push(<Item item={item[n]} key={item[n].key}/>)
         }
         return str
-        
     }
 
     render() {
