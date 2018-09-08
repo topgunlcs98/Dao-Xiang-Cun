@@ -1,0 +1,90 @@
+.wrapper {
+    clear: both;
+    height: 150px;
+    padding: 20px;
+    border-bottom: 1px solid #e7e7e7;
+}
+
+.choose {
+    float: left;
+    margin: 0 10px;
+}
+
+.star {
+    float: left;
+    height: 13px;
+    width: 13px;
+    margin: 0 1px;
+}
+
+.stars {
+    margin: -6px 0 0 -2px;
+}
+
+.photo {
+    float: left;
+    width: 120px; 
+    height: 115px;
+    overflow: hidden;
+    margin-left: 10px;
+}
+
+.title {
+    float: left;
+    margin-left: 30px;
+    font-size: 25px;
+    margin-top: -8px;
+    width: 120px; 
+}
+
+.props {
+    float: left;
+    margin-top: 10px;
+    width: 200px;
+    color: #9c9c9c;
+}
+
+.prop {
+    margin-top: -10px;
+    height: 20px;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+}
+
+.price {
+    float: left;
+    width: 85px;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.num {
+    float: left;
+    width: 80px;
+}
+
+.op {
+    float: left;
+    background-color: #e5e5e5;
+    width: 15px;
+    text-align:center;
+}
+
+.number {
+    float: left;
+    width: 30px;
+    height: 21px;
+    text-align:center;
+    vertical-align:middle;
+    border: 1px solid #cccccc;
+}
+
+.total {
+    float: left;
+    width: 50px;
+    margin-left: 20px;
+    color: #ff4400;
+    font-weight: bold;
+    font-size: 15px;
+}
