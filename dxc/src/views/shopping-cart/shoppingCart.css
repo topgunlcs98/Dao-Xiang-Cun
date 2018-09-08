@@ -7,24 +7,117 @@
 }
 
 .headerWrapper{
-    position: absolute;
-    top: 0;
-    margin-top: -70px;
-    width: 100%;
-    height: 70px;
-    box-shadow: 0 5px 20px -5px #000000
+     /*position: absolute;*/
+     top: 0;
+     /*margin-top: -70px;*/
+     width: 100%;
+     height: 70px;
+     box-shadow: 0 5px 20px -5px #000000
 }
 
+.infoWrapper {
+    width: 800px;
+    margin-left: auto; 
+    margin-right: auto;
+}
 
-.containtWrapper {
-    margin-top: 70px;
-    display: flex;
-    justify-content: space-between;
-    background-color: bisque;
+.tag {
+    margin-top: 30px;
+    font-size: 15px;
+}
+
+.choose {
+    float: left;
+    margin: 5px 5px 20px 10px;
+}
+
+.chooseWord {
+    float: left;
+}
+
+.title {
+    float: left;
+    margin-left: 148px;
+}
+
+.price {
+    float: left;
+    margin-left: 275px;
+}
+
+.num {
+    float: left;
+    margin-left: 63px;
+}
+
+.totalMoney {
+    float: left;
+    margin-left: 63px;
+}
+
+.item {
+    clear: both;
+    background-color: #fcfcfc;
+    border: 1px solid #cccccc;
+}
+
+.total {
+    clear: both;
+    width: 800px;
+    height: 30px;
+    font-size: 13px;
+    margin-top: 10px;
+    background-color: #e5e5e5;
+    padding-top: 5px;
+}
+
+.totalWordF {
+    float: left;
+    margin-left: 510px
+}
+
+.totalNum {
+    float: left;
+    font-size: 20px;
+    margin-top: -7px;
+    color: #ff4400;
+    width: 25px;
+    text-align:center;
+}
+
+.totalYuan {
+    float: left;
+    font-size: 20px;
+    margin-top: -7px;
+    color: #ff4400;
+    width: 50px;
+    text-align:center;
+}
+
+.totalWord {
+    float: left;
+}
+
+.totalWordS {
+    float: left;
+    margin-left: 30px;
+}
+
+.totalWordT {
+    float: left;
+    margin-left: 30px;
+    background-color: rgb(172, 172, 172);
+    height: 30px;
+    margin-top: -5px;
+    width: 50px;
+    text-align:center;
+    padding-top: 5px;
 }
 
 .footerWrapper {
     position:  absolute;
+    margin-top: 10px;
+    margin-bottom: 0px;
     bottom: 0;
     width:100%;
     height: 160px;
