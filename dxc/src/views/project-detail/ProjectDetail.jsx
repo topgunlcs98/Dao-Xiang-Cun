@@ -7,6 +7,7 @@ import Seller from './components/information/Seller'
 import Intro from './components/information/Intro'
 import Service from './components/information/Service'
 import Comment from './components/information/Comment'
+import Album from './components/album/Album'
 
 export default class ProjectDetail extends Component {
     render() {
@@ -17,7 +18,7 @@ export default class ProjectDetail extends Component {
                 </div>
                 <div className={styles.containtWrapper}>
                     <BriefIntro />
-                    <div>轮播图</div>
+                    <Album />
                     <Seller />
                     <Intro />
                     <Service />
