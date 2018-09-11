@@ -104,5 +104,14 @@
     margin-top: 10px;
 }
 
+.modal{
+    display: flex;
+    flex-direction: column;
+}
+
+.totalPrice{
+    float:right;
+    color: red
+}
 
 
