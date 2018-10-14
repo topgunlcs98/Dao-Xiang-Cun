@@ -18,9 +18,9 @@ export default class LogIn extends Component{
                         <div className={styles.title}>登录</div>
                         
                         <input className={styles.text} type="text" placeholder="输入账号" size="46" style={{height: 60}}/>
-                        <input className={styles.text} type="text" placeholder="输入密码" size="46" style={{height: 60}}/>
+                        <input className={styles.text} type="password" placeholder="输入密码" size="46" style={{height: 60}}/>
                         
-                        <div className={styles.forget}>忘记密码？</div>
+                        <div className={styles.forget}><NavLink to='/retrieve-password'>忘记密码？</NavLink></div>
                         
                         <div className={styles.buttonWrapper}>
                             <div className={styles.button}>
