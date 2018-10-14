@@ -6,6 +6,7 @@ import Diary from './diary/Diary'
 import ProjectDetail from './project-detail/ProjectDetail'
 import LogIn from './log-in/LogIn'
 import Register from './register/Register'
+import RetrievePassword from './retrieve-password/RetrievePassword'
 
 export {
     Home,
@@ -15,5 +16,6 @@ export {
     Diary,
     ProjectDetail,
     LogIn,
-    Register
+    Register,
+    RetrievePassword
 }
