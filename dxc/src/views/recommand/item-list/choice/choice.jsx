@@ -3,33 +3,31 @@ import styles from './choice.css'
 
 export default class Choice extends Component {
     constructor(props) {
-        super(props)
-        this.state={
-            sortByStar : props.sortByStar,
-            sortByPrice : props.sortByPrice,
-        }
+        super(props);
+        this.sortByStar = this.sortByStar.bind(this);
+        this.sortByPrice = this.sortByPrice.bind(this);
     }
 
-    clickStar() {
-        this.state.sortByStar()
+    // 父类函数绑定
+    sortByStar() {
+        this.props.sortByStar();
     }
-
-    clickPrice() {
-        this.state.sortByPrice()
+    sortByPrice() {
+        this.props.sortByPrice();
     }
 
     render() {
         return(
             <div class={styles.word}>
-                <button className={styles.button} onClick={(e)=>{this.clickStar(e)}}>
+                <button className={styles.button} onClick={this.sortByStar}>
                     星级
                 </button>
                 <div style={{float: 'left'}}>
                     &emsp;
                 </div>
-                <button className={styles.button} onClick={(e)=>{this.clickPrice(e)}}>
+                <button className={styles.button} onClick={this.sortByPrice}>
                     价格
-                    </button>
+                </button>
             </div>
         )
     }

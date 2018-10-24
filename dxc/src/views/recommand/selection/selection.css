@@ -4,8 +4,6 @@
 }
 
 .title {
-    clear: both;
-    float: left;
     width: 60px;
     text-align: center;
     color: gray;
@@ -13,22 +11,19 @@
 }
 
 .tag {
-    float: left;
     margin-left: 20px;
 }
 
 .tagNoChosen {
-    float: left;
-    margin-left: 20px;
+    margin-left: 18px;
+    padding-left: 4px;
+    cursor: pointer;
 }
 
 .tagChosen {
-    float: left;
-    margin-left: 20px;
+    margin-left: 18px;
+    padding-left: 4px;
+    cursor: pointer;
     background-color:  #ffb71a;
     color: white;
-}
-
-.clear {
-    clear: both;
 }

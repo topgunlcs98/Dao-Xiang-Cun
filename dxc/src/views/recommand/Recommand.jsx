@@ -6,8 +6,9 @@ import ItemList from './item-list/itemList'
 
 export default class Recommand extends Component {
     constructor(props) {
-        super(props)
+        super(props);
         this.state={
+            // 商品元数据
             item : [
                 {
                     photo : 'assets/pic5.jpeg',
@@ -16,9 +17,9 @@ export default class Recommand extends Component {
                     class : '亲子游',
                     comment : 'test',
                     activity : 'test',
-                    price : '197',
+                    price : 197,
                     star : 4,
-                    key : 0,
+                    time : '一日游'
                 },
                 {
                     photo : 'assets/pic4.jpeg',
@@ -27,9 +28,9 @@ export default class Recommand extends Component {
                     class : '亲子游',
                     comment : 'test2',
                     activity : 'test2',
-                    price : '177',
+                    price : 170,
                     star : 3,
-                    key : 1,
+                    time : '二日游'
                 },
                 {
                     photo : 'assets/pic3.jpeg',
@@ -38,83 +39,94 @@ export default class Recommand extends Component {
                     class : '周末出行',
                     comment : 'test3',
                     activity : 'test3',
-                    price : '150',
+                    price : 140,
                     star : 5,
-                    key : 2,
-                },
+                    time : '二日游'
+                }
             ],
-            oldNum : 3,
-            change : false,
-        }
+            tagList : {
+                address : [],
+                class : [],
+                time : [],
+                priceKind : []
+            },
+            newItem : []
+        };
+        this.sortByStar = this.sortByStar.bind(this);
+        this.sortByPrice = this.sortByPrice.bind(this);
+        this.selectionFunc = this.selectionFunc.bind(this);
     }
-
+    // 渲染前执行
+    // 提取元数据中的目的地，游玩分类等列表
     componentWillMount(){
-        var addressList = []
-        var classList = []
-        for (var n=0; n<this.state.item.length; n++) {
-            var item = this.state.item[n]
-            if (addressList.indexOf(item["address"])===-1){
-                addressList.push(item["address"])
-            }
-            if (classList.indexOf(item["class"])===-1){
-                classList.push(item["class"])
-            }
-        }
-        this.setState ({
-            addressList : addressList,
-            classList : classList,
-            itemBack : this.state.item,
-        })
-    }
-
-    sortByStar() {
-        var list = this.state.item
-        list = list.sort(compare("star")).reverse()
-        this.setState({
-            item : list,
-            change : true,
-        })
-    }
-
-    sortByPrice() {
-        var list = this.state.item
-        list = list.sort(compare("price"))
-        this.setState({
-            item : list,
-            change : true,
-        })
-    }
-
-    selectionFunc(kind, tagList) {
-        if (kind==="address") {
-            this.setState({
-                addressList : tagList
-            })
-        }
-    }
-
-    componentWillUpdate(nextProps, nextState) {
-        var newAddressList = nextState.addressList
-        var newNum = newAddressList.length
-        var change = nextState.change
-        var newItem = []
-        if (newNum===this.state.oldNum && !change){
-            return 0
-        }else if (newNum!==this.state.oldNum){
-            for (var n=0; n<this.state.itemBack.length; n++) {
-                var item = this.state.itemBack[n]
-                if (newAddressList.indexOf(item["address"])!==-1) {
-                    newItem.push(item)
+        let tagList = this.state.tagList;
+        let key = 0;
+        for (let item of this.state.item) {
+            function insertList(kind){
+                if (tagList[kind].indexOf(item[kind])===-1){
+                    tagList[kind].push(item[kind]);
                 }
             }
-            nextState.item = newItem
-            nextState.oldNum = newNum
-        }else{
-            return 0
-        }        
+            insertList("address");
+            insertList("class");
+            insertList("time");
+            item["key"] = key++;
+            if (item["price"]<150) {
+                item["priceKind"] = "150元以下";
+            }else{
+                item["priceKind"] = "150元以上";
+            }
+            insertList("priceKind");
+        }
+        this.setState ({
+            tagList : tagList,
+            // 所有操作都在newItem列表上进行
+            newItem : this.state.item
+        });
+    }
+    
+    // 按星星排序
+    sortByStar() {
+        let list = this.state.newItem;
+        list = list.sort(compare("star")).reverse();
+        this.setState({
+            newitem : list,
+            change : true
+        });
+    }
+
+    // 按价格排序
+    sortByPrice() {
+        let list = this.state.newItem;
+        list = list.sort(compare("price"));
+        this.setState({
+            newitem : list,
+            change : true
+        });
+    }
+
+    // 更新选项列表
+    selectionFunc(newTagList) {
+        let item = this.state.item;
+        // 只要有一个参数符合选项列表里的值，则选中并更新到newItem
+        item = item.filter((item)=>{
+            if (newTagList["address"].indexOf(item["address"]) !== -1
+            && newTagList["class"].indexOf(item["class"]) !== -1
+            && newTagList["time"].indexOf(item["time"]) !== -1
+            && newTagList["priceKind"].indexOf(item["priceKind"]) !== -1){
+                return true;
+            }else{
+                return false;
+            }
+        });
+        this.setState({ 
+            newItem : item 
+        });
     }
 
     render() {
+        const item = this.state.newItem;
+        const tagList = this.state.tagList;
         return(
             <div className={styles.wrapper}>
                 <div className={styles.headerWrapper}>
@@ -122,17 +134,15 @@ export default class Recommand extends Component {
                 </div>
                 <div className={styles.selectionWrapper}>
                     <Selection  
-                    item={this.state.item} 
-                    addressList={this.state.addressList}
-                    classList={this.state.classList}
-                    selectionFunc={(kind, tagList)=>{this.selectionFunc(kind, tagList)}}
+                    tagList={tagList}
+                    selectionFunc={this.selectionFunc}
                     />
                 </div>
                 <div className={styles.itemListWrapper}>
                     <ItemList 
-                    item={this.state.item} 
-                    sortByStar={()=>{this.sortByStar()}} 
-                    sortByPrice={()=>{this.sortByPrice()}}
+                    item={item} 
+                    sortByStar={this.sortByStar} 
+                    sortByPrice={this.sortByPrice}
                     />
                 </div>
                 <div className={styles.footerWrapper}>
@@ -143,6 +153,7 @@ export default class Recommand extends Component {
     }
 }
 
+// 排序函数（有小到大）
 var compare = function (prop) {
     return function (obj1, obj2) {
         var val1 = obj1[prop];
