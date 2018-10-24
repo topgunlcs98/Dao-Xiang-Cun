@@ -5,35 +5,35 @@ import Choice from './choice/choice'
 
 export default class ItemList extends Component {
     constructor(props) {
-        super(props)
-        this.state={
-            item : props.item,
-            sortByStar : props.sortByStar,
-            sortByPrice : props.sortByPrice,
-        }
+        super(props);
+        this.sortByStar = this.sortByStar.bind(this);
+        this.sortByPrice = this.sortByPrice.bind(this);
     }
 
-    componentWillReceiveProps(nextProps) {
-        this.setState({
-            item: nextProps.item
-        })
+    // 父类函数绑定
+    sortByStar() {
+        this.props.sortByStar();
+    }
+    sortByPrice() {
+        this.props.sortByPrice();
     }
 
+    // 列表渲染
     itemCons(){
-        var item = this.state.item
-        var len = item.length
-        var str = []
+        var item = this.props.item;
+        var len = item.length;
+        var str = [];
         for(let n=0; n<len; n++){
-            str.push(<Item item={item[n]} key={item[n].key}/>)
+            str.push(<Item item={item[n]} key={item[n].key}/>);
         }
-        return str
+        return str;
     }
 
     render() {
         return(
             <div class={styles.wrapper}>
                 <div class={styles.choice}>
-                    <Choice sortByStar={()=>{this.state.sortByStar()}}  sortByPrice={()=>{this.state.sortByPrice()}}/>
+                    <Choice sortByStar={this.sortByStar}  sortByPrice={this.sortByPrice}/>
                 </div>
                 <br />
                 <div>

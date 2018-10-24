@@ -3,105 +3,110 @@ import styles from './selection.css'
 
 export default class Selection extends Component {
     constructor(props) {
-        super(props)
-        if (!isEmptyObject(props)) {
-            this.state = {
-                item : props.item,
-                addressList : props.addressList,
-                classList : props.classList,
-                selectionFunc : props.selectionFunc,
-                tagList : []
-            }
-        } else {
-            this.state={
-                
-            }
-        }
-    }
-
-    componentWillReceiveProps(nextProps) {
-        this.setState({
-            item: nextProps.item
-        })
+        super(props);
+        this.state={
+            isCh : {
+                address : [],
+                class : [],
+                time : [],
+                priceKind : []
+            },  // 是否选中 标记列表
+            tagList : {},
+            newTagList : {}
+        };
     }
 
     componentWillMount(){
-        var flag = []
-        for (var n=0; n<this.state.addressList.length; n++){
-            flag.push(false)
+        let isCh = this.state.isCh;
+        let tagList = this.props.tagList;
+        // tagList对应isCh的每一位都设为false（默认）
+        for (let index in tagList) {
+            tagList[index].forEach(()=>{isCh[index].push(false)});
         }
         this.setState({
-            flag : flag,
+            isCh : isCh,
+            tagList : tagList,
+            newTagList : tagList
         })
     }
 
-    showTagList(kind, list) {
-        let len = list.length
-        var flag = this.state.flag
-        var str = []
+    click(kind, n){
+        const tagList = JSON.parse(JSON.stringify(this.state.tagList[kind]));
+        let newTagListL = JSON.parse(JSON.stringify(this.state.newTagList));
+        let newTagList = newTagListL[kind];
+        let isChL = this.state.isCh;
+        let isCh = isChL[kind];
+
+        // 检测是否全非选，若是，则全选
+        const len = isCh.length;
+        let num = 0;
+        for (;num<len;) {
+            if (isCh[num]!==false){
+                break;
+            }
+            num += 1;
+        }
+        if (num===len) {
+            newTagList = [];
+        }
+        if (isCh[n]===false) {
+            isCh[n] = true;
+            newTagList.push(tagList[n]);
+        }else{
+            isCh[n] = false;
+            newTagList.splice(newTagList.indexOf(tagList[n]), 1);
+        }
+        if (newTagList.length===0){
+            newTagList = tagList;
+        }
+        newTagListL[kind] = newTagList;
+        this.props.selectionFunc(newTagListL);
+        this.setState({
+            isCh : isChL,
+            newTagList : newTagListL
+        });
+        console.log(newTagListL, isChL)
+    }
+
+    showTagList(kind) {
+        let list = this.state.tagList[kind];
+        let isCh = this.state.isCh[kind];
+        let len = list.length;
+        let str = [];
         for(let n=0; n<len; n++){
-            if (flag[n]===false){
-                str.push(<p className={styles.tagNoChosen} onClick={()=>{this.click(kind, list[n], n)}}>{list[n]}</p>)
+            if (isCh[n]===false){
+                str.push(<span className={styles.tagNoChosen} onClick={()=>{this.click(kind, n)}}>{list[n]}&nbsp;</span>);
             }else{
-                str.push(<p className={styles.tagChosen} onClick={()=>{this.click(kind, list[n], n)}}>{list[n]}</p>)
+                str.push(<span className={styles.tagChosen} onClick={()=>{this.click(kind, n)}}>{list[n]}&nbsp;</span>);
             }
         }
-        return str
+        return str;
     }
 
-    click(kind, tag, n){
-        var tagList = this.state.tagList
-        var index = tagList.indexOf(tag)
-        var flag = this.state.flag
-        if (index===-1) {
-            tagList.push(tag)
-            flag[n] = true
-            this.setState({
-                flag : flag
-            })
-        }else{
-            tagList.splice(index, 1)
-            flag[n] = false
-            this.setState({
-                flag : flag
-            })
-        }
-        if (tagList.length===0){
-            tagList = this.state.addressList
-        }
-        this.state.selectionFunc(kind, tagList)
-    }
-
+    // 
     render() {
         return(
             <div class={styles.wrapper}>
                 <div>
-                    <div class={styles.title}>目的地</div>
-                    <div>{this.showTagList("address", this.state.addressList)}</div>
+                    <span class={styles.title}>目的地</span>
+                    <span style={{marginLeft:20}}>{this.showTagList("address")}</span>
                 </div>
                 <br />
                 <div>
-                    <div class={styles.title}>游玩分类</div>
-                    <div class={styles.tag}>22</div>
+                    <span class={styles.title}>游玩分类&nbsp;</span>
+                    <span>{this.showTagList("class")}</span>
                 </div>
                 <br />
                 <div>
-                    <div class={styles.title}>游玩时间</div>
-                    <div class={styles.tag}>22</div>
+                    <span class={styles.title}>游玩时间&nbsp;</span>
+                    <span>{this.showTagList("time")}</span>
                 </div>
                 <br />
                 <div>
-                    <div class={styles.title}>人均价格</div>
-                    <div class={styles.tag}>22</div>
+                    <span class={styles.title}>人均价格&nbsp;</span>
+                    <span>{this.showTagList("priceKind")}</span>
                 </div>
             </div>
         )
     }
 }
-
-function isEmptyObject(obj) {   
-    　　for (var key in obj){
-    　　　　return false;//返回false，不为空对象
-    　　}　　
-    　　return true;//返回true，为空对象
-    }
