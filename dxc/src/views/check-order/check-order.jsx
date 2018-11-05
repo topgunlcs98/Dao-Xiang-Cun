@@ -170,7 +170,9 @@ export default class Recommand extends Component {
 
 // d1先于d2，返回-1
 function dateComp(d1, d2) {
+    // eslint-disable-next-line radix
     let dl1 = d1.split('-').map((x)=>parseInt(x));
+    // eslint-disable-next-line radix
     let dl2 = d2.split('-').map((x)=>parseInt(x));
     for (let n=0; n<3; n++) {
         if (dl1[n]<dl2[n]) {
