@@ -1,0 +1,84 @@
+.wrapper {
+    width: 800px;
+    height: 190px;
+    border-top: 1px solid #E8E8E8;
+    border-left: 1px solid #E8E8E8;
+    border-right: 1px solid #E8E8E8;
+}
+
+.top {
+    background-color: #F4F4F4;
+    font-size: 15px;
+    padding: 7px;
+    font-weight: bold;
+    border-bottom: 1px solid #E8E8E8;
+}
+
+.firstBlock {
+    float: left;
+    width: 320px;
+    height: 135px;
+    margin: 10px;
+    border-right: 1px solid #E8E8E8;
+}
+
+.content {
+    float: left;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.photo {
+    float: left;
+    width: 110px;
+    height: 100px;
+    margin-top: 15px;
+    margin-left: 10px;
+}
+
+.secondBlock {
+    float: left;
+    width: 140px;
+    height: 135px;
+    margin-top: 10px;
+    border-right: 1px solid #E8E8E8;
+}
+
+.activity {
+    width : 100px;
+    margin-left: 15px;
+    margin-top: 10px;
+    font-size: 13px;
+    word-break:normal;
+    display:block;
+    white-space:pre-wrap;
+    word-wrap : break-word ;
+    overflow: hidden ;
+}
+
+.char {
+    background-color : #FF7F50;
+    color : white;
+    font-size : 14px;
+    padding : 0 2px ;
+}
+
+.thirdBlock {
+    float: left;
+    width: 140px;
+    height: 135px;
+    margin-top: 10px;
+    border-right: 1px solid #E8E8E8;
+}
+
+.fourthBlock {
+    float: left;
+    height: 135px;
+    margin-top: 10px;
+}
+
+.href {
+    margin-top: 28px;
+    margin-left: 55px;
+    font-size: 15px;
+}

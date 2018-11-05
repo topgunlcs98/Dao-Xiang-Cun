@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Home, Recommand, My, ShoppingCart, Diary, ProjectDetail, LogIn, Register, RetrievePassword } from './views'
+import { Home, Recommand, CheckOrder, My, ShoppingCart, Diary, ProjectDetail, LogIn, Register, RetrievePassword } from './views'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 class App extends Component {
   render() {
@@ -17,6 +17,7 @@ class App extends Component {
           <Route path='/' component={Home} exact />
           <Route path='/recommand' component={Recommand} />
           <Route path='/my' component={My} />
+          <Route path='/check-order' component={CheckOrder} />
           <Route path='/shoppingCart' component={ShoppingCart} />
           <Route path='/diary' component={Diary} />
           <Route path='/projectDetails' component={ProjectDetail} />
